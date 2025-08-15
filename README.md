@@ -47,23 +47,6 @@ Paper here -> [Psyche-R1: Towards Reliable Psychological LLMs through Unified Em
     </thead>
     <tbody>
         <tr>
-            <td align="left">MiniCPM4-8B</td>
-            <td align="center">50.00</td>
-            <td align="center">28.59</td>
-            <td align="center"><u>43.64</u></td>
-            <td align="center">81.58</td>
-            <td align="center">50.63</td>
-            <td align="center"><u>58.23</u></td>
-            <td align="center">65.62</td>
-            <td align="center">34.06</td>
-            <td align="center"><u>43.00</u></td>
-            <td align="center">51.75</td>
-            <td align="center">(<u>57.01</u>)</td>
-            <td align="center">23.05</td>
-            <td align="center">12.90</td>
-            <td align="center">1.35</td>
-        </tr>
-        <tr>
             <td align="left">Qwen2.5-7B-Instruct</td>
             <td align="center">47.57</td>
             <td align="center">31.64</td>
@@ -166,23 +149,6 @@ Paper here -> [Psyche-R1: Towards Reliable Psychological LLMs through Unified Em
             <td align="center">1.11</td>
         </tr>
         <tr>
-            <td align="left">Magistral-Small-2506</td>
-            <td align="center">56.58</td>
-            <td align="center">33.26</td>
-            <td align="center"><u>49.11</u></td>
-            <td align="center">82.89</td>
-            <td align="center">53.80</td>
-            <td align="center"><u>67.99</u></td>
-            <td align="center">70.10</td>
-            <td align="center">37.76</td>
-            <td align="center"><u>52.35</u></td>
-            <td align="center">55.73</td>
-            <td align="center">(<u>63.17</u>)</td>
-            <td align="center">22.90</td>
-            <td align="center">11.97</td>
-            <td align="center">1.21</td>
-        </tr>
-        <tr>
             <td align="left">GPT-4o</td>
             <td align="center">65.63</td>
             <td align="center">13.67</td>
@@ -198,23 +164,6 @@ Paper here -> [Psyche-R1: Towards Reliable Psychological LLMs through Unified Em
             <td align="center">23.45</td>
             <td align="center">12.75</td>
             <td align="center">1.18</td>
-        </tr>
-        <tr>
-            <td align="left">Gemini1.5-Pro-Latest</td>
-            <td align="center">61.04</td>
-            <td align="center">35.57</td>
-            <td align="center"><u>49.87</u></td>
-            <td align="center">84.87</td>
-            <td align="center">62.03</td>
-            <td align="center"><u>70.62</u></td>
-            <td align="center">80.84</td>
-            <td align="center">43.22</td>
-            <td align="center"><u>53.44</u></td>
-            <td align="center">61.26</td>
-            <td align="center">(<u>66.78</u>)</td>
-            <td align="center">21.63</td>
-            <td align="center">10.93</td>
-            <td align="center">1.06</td>
         </tr>
         <tr>
             <td align="left">Claude3.7-Sonnet</td>
@@ -266,23 +215,6 @@ Paper here -> [Psyche-R1: Towards Reliable Psychological LLMs through Unified Em
             <td align="center">24.45</td>
             <td align="center"><b>17.45</b></td>
             <td align="center">2.04</td>
-        </tr>
-        <tr>
-            <td align="left">PsyDT</td>
-            <td align="center">35.56</td>
-            <td align="center">35.20</td>
-            <td align="center"><u>50.14</u></td>
-            <td align="center">86.33</td>
-            <td align="center">69.70</td>
-            <td align="center"><u>78.66</u></td>
-            <td align="center">80.70</td>
-            <td align="center">52.72</td>
-            <td align="center"><u>62.26</u></td>
-            <td align="center">60.04</td>
-            <td align="center">(<u>65.61</u>)</td>
-            <td align="center">20.65</td>
-            <td align="center">13.41</td>
-            <td align="center">1.16</td>
         </tr>
         <tr>
             <td align="left">Psyche-R1</td>
