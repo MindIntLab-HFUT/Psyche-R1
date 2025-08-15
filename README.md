@@ -19,341 +19,348 @@ Paper here -> [Psyche-R1: Towards Reliable Psychological LLMs through Unified Em
 
 模型首先在海量的“非挑战题”（包括心理学题目和共情对话数据）进行SFT，为模型注入广泛的专业知识和共情能力。在此基础上，模型基于“挑战题”进行GRPO强化学习训练，以进一步提高模型的复杂推理能力。
 
-在多个权威的心理学基准测试中，仅有7B参数的Psyche-R1，其表现不仅显著超越其他同等规模的模型，甚至与671B参数的DeepSeek-R1表现相当。无论是在选择题还是开放式问答中，Psyche-R1都展现出了卓越的心理学领域能力。
+我们随后进行了详细的评估实验。在多个权威的心理学基准测试中，仅有7B参数的Psyche-R1，其表现不仅显著超越其他同等规模的模型，甚至与671B参数的DeepSeek-R1表现相当。无论是在选择题还是开放式问答中，Psyche-R1都展现出了卓越的心理学领域能力。
 
+模型在 [Psychological Counselor Examination Benchmark (PCEB)](https://github.com/MACLAB-HFUT/PsycoLLM)的实验结果如下：
 <table>
     <thead>
         <tr>
-            <th rowspan="2">Model</th>
-            <th colspan="3">Case</th>
-            <th colspan="3">Moral</th>
-            <th colspan="3">Theory</th>
-            <th colspan="2">Avg.</th>
-            <th colspan="3">Case (QA)</th>
+            <th rowspan="2" align="left">Model</th>
+            <th colspan="3" align="center">Case</th>
+            <th colspan="3" align="center">Moral</th>
+            <th colspan="3" align="center">Theory</th>
+            <th rowspan="2" colspan="2" align="center">Avg.</th>
+            <th colspan="3" align="center">Case (QA)</th>
         </tr>
         <tr>
-            <th>SMCQ</th>
-            <th colspan="2">MMCQ</th>
-            <th>SMCQ</th>
-            <th colspan="2">MMCQ</th>
-            <th>SMCQ</th>
-            <th colspan="2">MMCQ</th>
-            <th></th>
-            <th></th>
-            <th>R-1</th>
-            <th>R-L</th>
-            <th>B-4</th>
+            <th align="center">SMCQ</th>
+            <th colspan="2" align="center">MMCQ</th>
+            <th align="center">SMCQ</th>
+            <th colspan="2" align="center">MMCQ</th>
+            <th align="center">SMCQ</th>
+            <th colspan="2" align="center">MMCQ</th>
+            <th align="center">R-1</th>
+            <th align="center">R-L</th>
+            <th align="center">B-4</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>MiniCPM4-8B</td>
-            <td>50.00</td>
-            <td>28.59</td>
-            <td><u>43.64</u></td>
-            <td>81.58</td>
-            <td>50.63</td>
-            <td><u>58.23</u></td>
-            <td>65.62</td>
-            <td>34.06</td>
-            <td><u>43.00</u></td>
-            <td>51.75</td>
-            <td>(<u>57.01</u>)</td>
-            <td>23.05</td>
-            <td>12.90</td>
-            <td>1.35</td>
+            <td align="left">MiniCPM4-8B</td>
+            <td align="center">50.00</td>
+            <td align="center">28.59</td>
+            <td align="center"><u>43.64</u></td>
+            <td align="center">81.58</td>
+            <td align="center">50.63</td>
+            <td align="center"><u>58.23</u></td>
+            <td align="center">65.62</td>
+            <td align="center">34.06</td>
+            <td align="center"><u>43.00</u></td>
+            <td align="center">51.75</td>
+            <td align="center">(<u>57.01</u>)</td>
+            <td align="center">23.05</td>
+            <td align="center">12.90</td>
+            <td align="center">1.35</td>
         </tr>
         <tr>
-            <td>Qwen2.5-7B-Instruct</td>
-            <td>47.57</td>
-            <td>31.64</td>
-            <td><u>47.49</u></td>
-            <td>87.83</td>
-            <td>59.50</td>
-            <td><u>71.02</u></td>
-            <td>78.46</td>
-            <td>42.45</td>
-            <td><u>55.17</u></td>
-            <td>57.91</td>
-            <td>(<u>64.59</u>)</td>
-            <td>20.94</td>
-            <td>11.28</td>
-            <td>1.28</td>
+            <td align="left">Qwen2.5-7B-Instruct</td>
+            <td align="center">47.57</td>
+            <td align="center">31.64</td>
+            <td align="center"><u>47.49</u></td>
+            <td align="center">87.83</td>
+            <td align="center">59.50</td>
+            <td align="center"><u>71.02</u></td>
+            <td align="center">78.46</td>
+            <td align="center">42.45</td>
+            <td align="center"><u>55.17</u></td>
+            <td align="center">57.91</td>
+            <td align="center">(<u>64.59</u>)</td>
+            <td align="center">20.94</td>
+            <td align="center">11.28</td>
+            <td align="center">1.28</td>
         </tr>
         <tr>
-            <td>Qwen2.5-14B-Instruct</td>
-            <td>47.13</td>
-            <td>41.10</td>
-            <td><u>55.93</u></td>
-            <td>89.81</td>
-            <td>63.93</td>
-            <td><u>73.60</u></td>
-            <td>80.32</td>
-            <td>50.16</td>
-            <td><u>61.26</u></td>
-            <td>62.08</td>
-            <td>(<u>68.01</u>)</td>
-            <td>22.69</td>
-            <td>13.93</td>
-            <td>1.53</td>
+            <td align="left">Qwen2.5-14B-Instruct</td>
+            <td align="center">47.13</td>
+            <td align="center">41.10</td>
+            <td align="center"><u>55.93</u></td>
+            <td align="center">89.81</td>
+            <td align="center">63.93</td>
+            <td align="center"><u>73.60</u></td>
+            <td align="center">80.32</td>
+            <td align="center">50.16</td>
+            <td align="center"><u>61.26</u></td>
+            <td align="center">62.08</td>
+            <td align="center">(<u>68.01</u>)</td>
+            <td align="center">22.69</td>
+            <td align="center">13.93</td>
+            <td align="center">1.53</td>
         </tr>
         <tr>
-            <td>Qwen2.5-72B-Instruct</td>
-            <td>46.91</td>
-            <td>40.34</td>
-            <td><u>53.11</u></td>
-            <td>90.79</td>
-            <td>70.25</td>
-            <td><u>78.48</u></td>
-            <td>82.63</td>
-            <td>47.63</td>
-            <td><u>59.74</u></td>
-            <td>63.09</td>
-            <td>(<u>68.61</u>)</td>
-            <td>21.43</td>
-            <td>12.02</td>
-            <td>1.16</td>
+            <td align="left">Qwen2.5-72B-Instruct</td>
+            <td align="center">46.91</td>
+            <td align="center">40.34</td>
+            <td align="center"><u>53.11</u></td>
+            <td align="center">90.79</td>
+            <td align="center">70.25</td>
+            <td align="center"><u>78.48</u></td>
+            <td align="center">82.63</td>
+            <td align="center">47.63</td>
+            <td align="center"><u>59.74</u></td>
+            <td align="center">63.09</td>
+            <td align="center">(<u>68.61</u>)</td>
+            <td align="center">21.43</td>
+            <td align="center">12.02</td>
+            <td align="center">1.16</td>
         </tr>
         <tr>
-            <td>DeepSeek-R1</td>
-            <td><b>79.25</b></td>
-            <td>44.25</td>
-            <td><u>60.86</u></td>
-            <td><b>95.39</b></td>
-            <td>68.99</td>
-            <td><u>77.95</u></td>
-            <td><b>92.19</b></td>
-            <td>57.60</td>
-            <td><u>69.41</u></td>
-            <td>72.95</td>
-            <td>(<b><u>79.18</u></b>)</td>
-            <td>17.65</td>
-            <td>9.19</td>
-            <td>0.94</td>
+            <td align="left">DeepSeek-R1</td>
+            <td align="center"><b>79.25</b></td>
+            <td align="center">44.25</td>
+            <td align="center"><u>60.86</u></td>
+            <td align="center"><b>95.39</b></td>
+            <td align="center">68.99</td>
+            <td align="center"><u>77.95</u></td>
+            <td align="center"><b>92.19</b></td>
+            <td align="center">57.60</td>
+            <td align="center"><u>69.41</u></td>
+            <td align="center">72.95</td>
+            <td align="center">(<b><u>79.18</u></b>)</td>
+            <td align="center">17.65</td>
+            <td align="center">9.19</td>
+            <td align="center">0.94</td>
         </tr>
         <tr>
-            <td>DeepSeek-R1-70B</td>
-            <td>56.30</td>
-            <td>30.72</td>
-            <td><u>46.95</u></td>
-            <td>88.16</td>
-            <td>52.53</td>
-            <td><u>65.66</u></td>
-            <td>68.01</td>
-            <td>25.64</td>
-            <td><u>45.63</u></td>
-            <td>53.56</td>
-            <td>(<u>61.79</u>)</td>
-            <td>22.77</td>
-            <td>13.23</td>
-            <td>1.16</td>
+            <td align="left">DeepSeek-R1-70B</td>
+            <td align="center">56.30</td>
+            <td align="center">30.72</td>
+            <td align="center"><u>46.95</u></td>
+            <td align="center">88.16</td>
+            <td align="center">52.53</td>
+            <td align="center"><u>65.66</u></td>
+            <td align="center">68.01</td>
+            <td align="center">25.64</td>
+            <td align="center"><u>45.63</u></td>
+            <td align="center">53.56</td>
+            <td align="center">(<u>61.79</u>)</td>
+            <td align="center">22.77</td>
+            <td align="center">13.23</td>
+            <td align="center">1.16</td>
         </tr>
         <tr>
-            <td>QwQ-32B</td>
-            <td>56.51</td>
-            <td>23.35</td>
-            <td><u>41.27</u></td>
-            <td>88.82</td>
-            <td>41.14</td>
-            <td><u>53.06</u></td>
-            <td>82.12</td>
-            <td>32.69</td>
-            <td><u>49.90</u></td>
-            <td>54.11</td>
-            <td>(<u>61.95</u>)</td>
-            <td>18.39</td>
-            <td>7.48</td>
-            <td>0.84</td>
+            <td align="left">QwQ-32B</td>
+            <td align="center">56.51</td>
+            <td align="center">23.35</td>
+            <td align="center"><u>41.27</u></td>
+            <td align="center">88.82</td>
+            <td align="center">41.14</td>
+            <td align="center"><u>53.06</u></td>
+            <td align="center">82.12</td>
+            <td align="center">32.69</td>
+            <td align="center"><u>49.90</u></td>
+            <td align="center">54.11</td>
+            <td align="center">(<u>61.95</u>)</td>
+            <td align="center">18.39</td>
+            <td align="center">7.48</td>
+            <td align="center">0.84</td>
         </tr>
         <tr>
-            <td>Qwen3-30B-A3B</td>
-            <td>59.65</td>
-            <td>31.51</td>
-            <td><u>47.28</u></td>
-            <td>91.45</td>
-            <td>55.06</td>
-            <td><u>65.66</u></td>
-            <td>80.75</td>
-            <td>47.45</td>
-            <td><u>59.25</u></td>
-            <td>60.98</td>
-            <td>(<u>67.34</u>)</td>
-            <td>20.53</td>
-            <td>12.06</td>
-            <td>1.18</td>
+            <td align="left">Qwen3-30B-A3B</td>
+            <td align="center">59.65</td>
+            <td align="center">31.51</td>
+            <td align="center"><u>47.28</u></td>
+            <td align="center">91.45</td>
+            <td align="center">55.06</td>
+            <td align="center"><u>65.66</u></td>
+            <td align="center">80.75</td>
+            <td align="center">47.45</td>
+            <td align="center"><u>59.25</u></td>
+            <td align="center">60.98</td>
+            <td align="center">(<u>67.34</u>)</td>
+            <td align="center">20.53</td>
+            <td align="center">12.06</td>
+            <td align="center">1.18</td>
         </tr>
         <tr>
-            <td>Qwen3-235B-A22B</td>
-            <td>68.58</td>
-            <td>41.91</td>
-            <td><u>57.24</u></td>
-            <td>93.42</td>
-            <td>69.62</td>
-            <td><u>78.90</u></td>
-            <td>88.36</td>
-            <td>56.70</td>
-            <td><u>68.64</u></td>
-            <td>69.77</td>
-            <td>(<u>75.86</u>)</td>
-            <td>18.96</td>
-            <td>11.14</td>
-            <td>1.11</td>
+            <td align="left">Qwen3-235B-A22B</td>
+            <td align="center">68.58</td>
+            <td align="center">41.91</td>
+            <td align="center"><u>57.24</u></td>
+            <td align="center">93.42</td>
+            <td align="center">69.62</td>
+            <td align="center"><u>78.90</u></td>
+            <td align="center">88.36</td>
+            <td align="center">56.70</td>
+            <td align="center"><u>68.64</u></td>
+            <td align="center">69.77</td>
+            <td align="center">(<u>75.86</u>)</td>
+            <td align="center">18.96</td>
+            <td align="center">11.14</td>
+            <td align="center">1.11</td>
         </tr>
         <tr>
-            <td>Magistral-Small-2506</td>
-            <td>56.58</td>
-            <td>33.26</td>
-            <td><u>49.11</u></td>
-            <td>82.89</td>
-            <td>53.80</td>
-            <td><u>67.99</u></td>
-            <td>70.10</td>
-            <td>37.76</td>
-            <td><u>52.35</u></td>
-            <td>55.73</td>
-            <td>(<u>63.17</u>)</td>
-            <td>22.90</td>
-            <td>11.97</td>
-            <td>1.21</td>
+            <td align="left">Magistral-Small-2506</td>
+            <td align="center">56.58</td>
+            <td align="center">33.26</td>
+            <td align="center"><u>49.11</u></td>
+            <td align="center">82.89</td>
+            <td align="center">53.80</td>
+            <td align="center"><u>67.99</u></td>
+            <td align="center">70.10</td>
+            <td align="center">37.76</td>
+            <td align="center"><u>52.35</u></td>
+            <td align="center">55.73</td>
+            <td align="center">(<u>63.17</u>)</td>
+            <td align="center">22.90</td>
+            <td align="center">11.97</td>
+            <td align="center">1.21</td>
         </tr>
         <tr>
-            <td>GPT-4o</td>
-            <td>65.63</td>
-            <td>13.67</td>
-            <td><u>34.53</u></td>
-            <td>88.15</td>
-            <td>33.54</td>
-            <td><u>54.79</u></td>
-            <td>74.65</td>
-            <td>24.10</td>
-            <td><u>45.07</u></td>
-            <td>49.96</td>
-            <td>(<u>60.47</u>)</td>
-            <td>23.45</td>
-            <td>12.75</td>
-            <td>1.18</td>
+            <td align="left">GPT-4o</td>
+            <td align="center">65.63</td>
+            <td align="center">13.67</td>
+            <td align="center"><u>34.53</u></td>
+            <td align="center">88.15</td>
+            <td align="center">33.54</td>
+            <td align="center"><u>54.79</u></td>
+            <td align="center">74.65</td>
+            <td align="center">24.10</td>
+            <td align="center"><u>45.07</u></td>
+            <td align="center">49.96</td>
+            <td align="center">(<u>60.47</u>)</td>
+            <td align="center">23.45</td>
+            <td align="center">12.75</td>
+            <td align="center">1.18</td>
         </tr>
         <tr>
-            <td>Gemini1.5-Pro-Latest</td>
-            <td>61.04</td>
-            <td>35.57</td>
-            <td><u>49.87</u></td>
-            <td>84.87</td>
-            <td>62.03</td>
-            <td><u>70.62</u></td>
-            <td>80.84</td>
-            <td>43.22</td>
-            <td><u>53.44</u></td>
-            <td>61.26</td>
-            <td>(<u>66.78</u>)</td>
-            <td>21.63</td>
-            <td>10.93</td>
-            <td>1.06</td>
+            <td align="left">Gemini1.5-Pro-Latest</td>
+            <td align="center">61.04</td>
+            <td align="center">35.57</td>
+            <td align="center"><u>49.87</u></td>
+            <td align="center">84.87</td>
+            <td align="center">62.03</td>
+            <td align="center"><u>70.62</u></td>
+            <td align="center">80.84</td>
+            <td align="center">43.22</td>
+            <td align="center"><u>53.44</u></td>
+            <td align="center">61.26</td>
+            <td align="center">(<u>66.78</u>)</td>
+            <td align="center">21.63</td>
+            <td align="center">10.93</td>
+            <td align="center">1.06</td>
         </tr>
         <tr>
-            <td>Claude3.7-Sonnet</td>
-            <td>63.39</td>
-            <td>19.40</td>
-            <td><u>34.23</u></td>
-            <td>90.13</td>
-            <td>60.13</td>
-            <td><u>70.04</u></td>
-            <td>76.73</td>
-            <td>37.37</td>
-            <td><u>48.99</u></td>
-            <td>57.86</td>
-            <td>(<u>63.92</u>)</td>
-            <td>21.59</td>
-            <td>11.11</td>
-            <td>1.23</td>
+            <td align="left">Claude3.7-Sonnet</td>
+            <td align="center">63.39</td>
+            <td align="center">19.40</td>
+            <td align="center"><u>34.23</u></td>
+            <td align="center">90.13</td>
+            <td align="center">60.13</td>
+            <td align="center"><u>70.04</u></td>
+            <td align="center">76.73</td>
+            <td align="center">37.37</td>
+            <td align="center"><u>48.99</u></td>
+            <td align="center">57.86</td>
+            <td align="center">(<u>63.92</u>)</td>
+            <td align="center">21.59</td>
+            <td align="center">11.11</td>
+            <td align="center">1.23</td>
         </tr>
         <tr>
-            <td>CPsyCounX</td>
-            <td>40.87</td>
-            <td>16.91</td>
-            <td><u>32.90</u></td>
-            <td>75.17</td>
-            <td>36.08</td>
-            <td><u>54.85</u></td>
-            <td>54.78</td>
-            <td>19.03</td>
-            <td><u>38.90</u></td>
-            <td>40.47</td>
-            <td>(<u>49.58</u>)</td>
-            <td>22.83</td>
-            <td>11.94</td>
-            <td>1.48</td>
+            <td align="left">CPsyCounX</td>
+            <td align="center">40.87</td>
+            <td align="center">16.91</td>
+            <td align="center"><u>32.90</u></td>
+            <td align="center">75.17</td>
+            <td align="center">36.08</td>
+            <td align="center"><u>54.85</u></td>
+            <td align="center">54.78</td>
+            <td align="center">19.03</td>
+            <td align="center"><u>38.90</u></td>
+            <td align="center">40.47</td>
+            <td align="center">(<u>49.58</u>)</td>
+            <td align="center">22.83</td>
+            <td align="center">11.94</td>
+            <td align="center">1.48</td>
         </tr>
         <tr>
-            <td>EmoLLM</td>
-            <td>46.93</td>
-            <td>21.87</td>
-            <td><u>40.02</u></td>
-            <td>84.21</td>
-            <td>34.17</td>
-            <td><u>51.05</u></td>
-            <td>71.72</td>
-            <td>26.18</td>
-            <td><u>44.49</u></td>
-            <td>47.51</td>
-            <td>(<u>56.40</u>)</td>
-            <td>22.15</td>
-            <td>11.69</td>
-            <td>1.20</td>
+            <td align="left">EmoLLM</td>
+            <td align="center">46.93</td>
+            <td align="center">21.87</td>
+            <td align="center"><u>40.02</u></td>
+            <td align="center">84.21</td>
+            <td align="center">34.17</td>
+            <td align="center"><u>51.05</u></td>
+            <td align="center">71.72</td>
+            <td align="center">26.18</td>
+            <td align="center"><u>44.49</u></td>
+            <td align="center">47.51</td>
+            <td align="center">(<u>56.40</u>)</td>
+            <td align="center">22.15</td>
+            <td align="center">11.69</td>
+            <td align="center">1.20</td>
         </tr>
         <tr>
-            <td>PsycoLLM</td>
-            <td>55.58</td>
-            <td>35.07</td>
-            <td><u>42.89</u></td>
-            <td>88.81</td>
-            <td>69.62</td>
-            <td><u>74.20</u></td>
-            <td>72.63</td>
-            <td>48.59</td>
-            <td><u>54.12</u></td>
-            <td>61.72</td>
-            <td>(<u>64.71</u>)</td>
-            <td>24.45</td>
-            <td><b>17.45</b></td>
-            <td>2.04</td>
+            <td align="left">PsycoLLM</td>
+            <td align="center">55.58</td>
+            <td align="center">35.07</td>
+            <td align="center"><u>42.89</u></td>
+            <td align="center">88.81</td>
+            <td align="center">69.62</td>
+            <td align="center"><u>74.20</u></td>
+            <td align="center">72.63</td>
+            <td align="center">48.59</td>
+            <td align="center"><u>54.12</u></td>
+            <td align="center">61.72</td>
+            <td align="center">(<u>64.71</u>)</td>
+            <td align="center">24.45</td>
+            <td align="center"><b>17.45</b></td>
+            <td align="center">2.04</td>
         </tr>
         <tr>
-            <td>PsyDT</td>
-            <td>35.56</td>
-            <td>35.20</td>
-            <td><u>50.14</u></td>
-            <td>86.33</td>
-            <td>69.70</td>
-            <td><u>78.66</u></td>
-            <td>80.70</td>
-            <td>52.72</td>
-            <td><u>62.26</u></td>
-            <td>60.04</td>
-            <td>(<u>65.61</u>)</td>
-            <td>20.65</td>
-            <td>13.41</td>
-            <td>1.16</td>
+            <td align="left">PsyDT</td>
+            <td align="center">35.56</td>
+            <td align="center">35.20</td>
+            <td align="center"><u>50.14</u></td>
+            <td align="center">86.33</td>
+            <td align="center">69.70</td>
+            <td align="center"><u>78.66</u></td>
+            <td align="center">80.70</td>
+            <td align="center">52.72</td>
+            <td align="center"><u>62.26</u></td>
+            <td align="center">60.04</td>
+            <td align="center">(<u>65.61</u>)</td>
+            <td align="center">20.65</td>
+            <td align="center">13.41</td>
+            <td align="center">1.16</td>
         </tr>
         <tr>
-            <td>Psyche-R1</td>
-            <td>63.31</td>
-            <td><b>56.26</b></td>
-            <td><b><u>66.21</u></b></td>
-            <td>92.76</td>
-            <td><b>79.62</b></td>
-            <td><b><u>82.54</u></b></td>
-            <td>87.70</td>
-            <td><b>66.54</b></td>
-            <td><b><u>73.34</u></b></td>
-            <td><b>74.37</b></td>
-            <td>(<u>77.64</u>)</td>
-            <td><b>27.31</b></td>
-            <td>15.33</td>
-            <td><b>2.40</b></td>
+            <td align="left">Psyche-R1</td>
+            <td align="center">63.31</td>
+            <td align="center"><b>56.26</b></td>
+            <td align="center"><b><u>66.21</u></b></td>
+            <td align="center">92.76</td>
+            <td align="center"><b>79.62</b></td>
+            <td align="center"><b><u>82.54</u></b></td>
+            <td align="center">87.70</td>
+            <td align="center"><b>66.54</b></td>
+            <td align="center"><b><u>73.34</u></b></td>
+            <td align="center"><b>74.37</b></td>
+            <td align="center">(<u>77.64</u>)</td>
+            <td align="center"><b>27.31</b></td>
+            <td align="center">15.33</td>
+            <td align="center"><b>2.40</b></td>
         </tr>
     </tbody>
 </table>
+
+<br>
+
+**表格说明**:
+* `Case`: 案例分析, `Moral`: 职业道德, `Theory`: 理论水平, `Case (QA)`: 案例问答。
+* <u>下划线数字</u> 表示 MMCQ 的弹性准确率。
+* <b>粗体数字</b> 表示该项中的最佳性能。
+* 平均值表示标准准确率的平均值，括号内的值表示 SMCQ 的标准准确率和 MMCQ 的弹性准确率的平均值。
 
 ## 致谢
 
