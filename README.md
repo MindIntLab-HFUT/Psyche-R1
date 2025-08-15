@@ -19,9 +19,9 @@ Paper here -> [Psyche-R1: Towards Reliable Psychological LLMs through Unified Em
 
 模型首先在海量的“非挑战题”（包括心理学题目和共情对话数据）进行SFT，为模型注入广泛的专业知识和共情能力。在此基础上，模型基于“挑战题”进行GRPO强化学习训练，以进一步提高模型的复杂推理能力。
 
-我们随后进行了详细的评估实验。在多个权威的心理学基准测试中，仅有7B参数的Psyche-R1，其表现不仅显著超越其他同等规模的模型，甚至与671B参数的DeepSeek-R1表现相当。无论是在选择题还是开放式问答中，Psyche-R1都展现出了卓越的心理学领域能力。
+我们随后进行了详细的评估实验。在多个权威的心理学基准测试中，仅有7B参数的Psyche-R1，其表现不仅显著超越其他同等规模的模型，甚至与671B参数的DeepSeek-R1表现相当。
 
-模型在 [Psychological Counselor Examination Benchmark (PCEB)](https://github.com/MACLAB-HFUT/PsycoLLM)的实验结果如下：
+模型在 [Psychological Counselor Examination Benchmark (PCEB)](https://github.com/MACLAB-HFUT/PsycoLLM)的实验结果如下。其中，下划线数字表示 MMCQ 的弹性正确率，粗体数字表示该项中的最佳性能，平均值表示严格正确率的平均值，括号内的值表示 SMCQ 的严格正确率和 MMCQ 的弹性正确率的平均值。实验结果表明，无论是在选择题还是开放式问答中，Psyche-R1都展现出了卓越的心理学领域能力。
 <table>
     <thead>
         <tr>
@@ -356,11 +356,7 @@ Paper here -> [Psyche-R1: Towards Reliable Psychological LLMs through Unified Em
 
 <br>
 
-**表格说明**:
-* `Case`: 案例分析, `Moral`: 职业道德, `Theory`: 理论水平, `Case (QA)`: 案例问答。
-* <u>下划线数字</u> 表示 MMCQ 的弹性准确率。
-* <b>粗体数字</b> 表示该项中的最佳性能。
-* 平均值表示标准准确率的平均值，括号内的值表示 SMCQ 的标准准确率和 MMCQ 的弹性准确率的平均值。
+我们还进行了更详细、更全面的实验，包括[CPsyExam](https://aclanthology.org/anthology-files/anthology-files/pdf/coling/2025.coling-main.745.pdf)和[PsyDT](https://arxiv.org/pdf/2412.13660)。
 
 ## 致谢
 
