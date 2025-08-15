@@ -22,7 +22,7 @@ Paper here -> [Psyche-R1: Towards Reliable Psychological LLMs through Unified Em
 
 我们随后进行了详细的评估实验。在多个权威的心理学基准测试中，仅有7B参数的Psyche-R1，其表现不仅显著超越其他同等规模的模型，甚至与671B参数的DeepSeek-R1表现相当。
 
-模型在 [Psychological Counselor Examination Benchmark (PCEB)](https://github.com/MACLAB-HFUT/PsycoLLM)的实验结果如下。其中，下划线数字表示 MMCQ 的弹性正确率，粗体数字表示该项中的最佳性能，平均值表示严格正确率的平均值，括号内的值表示 SMCQ 的严格正确率和 MMCQ 的弹性正确率的平均值。实验结果表明，无论是在选择题还是开放式问答中，Psyche-R1都展现出了卓越的心理学领域能力。
+模型在 [Psychological Counselor Examination Benchmark (PCEB)](https://github.com/MACLAB-HFUT/PsycoLLM)的实验结果如下。注意，我们仅展示了部分的实验结果，完整实验结果请看文章。其中，下划线数字表示 MMCQ 的弹性正确率，粗体数字表示该项中的最佳性能，平均值表示严格正确率的平均值，括号内的值表示 SMCQ 的严格正确率和 MMCQ 的弹性正确率的平均值。实验结果表明，无论是在选择题还是开放式问答中，Psyche-R1都展现出了卓越的心理学领域能力。
 <table>
     <thead>
         <tr>
@@ -79,23 +79,6 @@ Paper here -> [Psyche-R1: Towards Reliable Psychological LLMs through Unified Em
             <td align="center">20.94</td>
             <td align="center">11.28</td>
             <td align="center">1.28</td>
-        </tr>
-        <tr>
-            <td align="left">Qwen2.5-14B-Instruct</td>
-            <td align="center">47.13</td>
-            <td align="center">41.10</td>
-            <td align="center"><u>55.93</u></td>
-            <td align="center">89.81</td>
-            <td align="center">63.93</td>
-            <td align="center"><u>73.60</u></td>
-            <td align="center">80.32</td>
-            <td align="center">50.16</td>
-            <td align="center"><u>61.26</u></td>
-            <td align="center">62.08</td>
-            <td align="center">(<u>68.01</u>)</td>
-            <td align="center">22.69</td>
-            <td align="center">13.93</td>
-            <td align="center">1.53</td>
         </tr>
         <tr>
             <td align="left">Qwen2.5-72B-Instruct</td>
@@ -164,23 +147,6 @@ Paper here -> [Psyche-R1: Towards Reliable Psychological LLMs through Unified Em
             <td align="center">18.39</td>
             <td align="center">7.48</td>
             <td align="center">0.84</td>
-        </tr>
-        <tr>
-            <td align="left">Qwen3-30B-A3B</td>
-            <td align="center">59.65</td>
-            <td align="center">31.51</td>
-            <td align="center"><u>47.28</u></td>
-            <td align="center">91.45</td>
-            <td align="center">55.06</td>
-            <td align="center"><u>65.66</u></td>
-            <td align="center">80.75</td>
-            <td align="center">47.45</td>
-            <td align="center"><u>59.25</u></td>
-            <td align="center">60.98</td>
-            <td align="center">(<u>67.34</u>)</td>
-            <td align="center">20.53</td>
-            <td align="center">12.06</td>
-            <td align="center">1.18</td>
         </tr>
         <tr>
             <td align="left">Qwen3-235B-A22B</td>
@@ -266,23 +232,6 @@ Paper here -> [Psyche-R1: Towards Reliable Psychological LLMs through Unified Em
             <td align="center">21.59</td>
             <td align="center">11.11</td>
             <td align="center">1.23</td>
-        </tr>
-        <tr>
-            <td align="left">CPsyCounX</td>
-            <td align="center">40.87</td>
-            <td align="center">16.91</td>
-            <td align="center"><u>32.90</u></td>
-            <td align="center">75.17</td>
-            <td align="center">36.08</td>
-            <td align="center"><u>54.85</u></td>
-            <td align="center">54.78</td>
-            <td align="center">19.03</td>
-            <td align="center"><u>38.90</u></td>
-            <td align="center">40.47</td>
-            <td align="center">(<u>49.58</u>)</td>
-            <td align="center">22.83</td>
-            <td align="center">11.94</td>
-            <td align="center">1.48</td>
         </tr>
         <tr>
             <td align="left">EmoLLM</td>
