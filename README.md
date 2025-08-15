@@ -4,7 +4,7 @@
 Paper here -> [Psyche-R1: Towards Reliable Psychological LLMs through Unified Empathy, Expertise, and Reasoning](https://arxiv.org/pdf/2508.10848)
 
 ## 最近更新
--[2025.8.16] 中文心理推理大模型Psyche-R1（亦称PsycoLLM-R1）正式发布！如有需要下载模型，请点击此处：[MACLAB-HFUT/Psyche-R1](https://huggingface.co/MACLAB-HFUT/Psyche-R1)
+🔥[2025.8.16] 中文心理推理大模型Psyche-R1（亦称PsycoLLM-R1）正式发布！如有需要下载模型，请点击此处：[MACLAB-HFUT/Psyche-R1](https://huggingface.co/MACLAB-HFUT/Psyche-R1)
 
 ## 简介
 
@@ -16,11 +16,9 @@ Paper here -> [Psyche-R1: Towards Reliable Psychological LLMs through Unified Em
 
 ## 致谢
 
-This repo benefits from [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory) and [VeRL](https://github.com/volcengine/verl). Thanks for their wonderful works.
+模型训练基于[LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory)和[VeRL](https://github.com/volcengine/verl)框架进行。
 
-## 许可
-
-This repository is licensed under the [Apache-2.0 License](LICENSE).
+同时，感谢以下同学对本项目的帮助，包括但不限于数据收集、数据处理等（排名不分先后）：邓宇航、金逸多、李想、刘悦、罗妍、王卫东、禹锦明
 
 ## 引用
 
