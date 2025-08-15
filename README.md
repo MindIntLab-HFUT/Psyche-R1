@@ -238,7 +238,7 @@ Paper here -> [Psyche-R1: Towards Reliable Psychological LLMs through Unified Em
 
 <br>
 
-我们还进行了更详细、更全面的实验，包括[CPsyExam](https://aclanthology.org/anthology-files/anthology-files/pdf/coling/2025.coling-main.745.pdf)和[PsyDT](https://arxiv.org/pdf/2412.13660)。
+我们还进行了更详细、更全面的实验，包括在[CPsyExam](https://aclanthology.org/anthology-files/anthology-files/pdf/coling/2025.coling-main.745.pdf)和[PsyDT](https://arxiv.org/pdf/2412.13660)测试集上的实验。详细实验结果，请查阅原文。
 
 ## 致谢
 
