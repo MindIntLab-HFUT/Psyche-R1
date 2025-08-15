@@ -16,6 +16,7 @@ Paper here -> [Psyche-R1: Towards Reliable Psychological LLMs through Unified Em
 
 ## 致谢
 
+This repo benefits from [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory) and [VeRL](https://github.com/volcengine/verl). Thanks for their wonderful works.
 
 ## 许可
 
@@ -36,6 +37,3 @@ If this work is helpful, please kindly cite as:
       url={https://arxiv.org/abs/2508.10848}, 
 }
 ```
-
-## Acknowledgement
-This repo benefits from [LLaMA Factory](https://github.com/hiyouga/LLaMA-Factory) and [VeRL](https://github.com/volcengine/verl). Thanks for their wonderful works.
