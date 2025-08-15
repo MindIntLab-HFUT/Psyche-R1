@@ -14,6 +14,13 @@ Paper here -> [Psyche-R1: Towards Reliable Psychological LLMs through Unified Em
 
 为此，我们提出了中文心理推理大模型Psyche-R1，首次统一了共情、专业知识和推理能力。
 
+我们提出了一个全新的数据合成管道，如下图所示。通过数据清洗、题目生成、解释迭代和共情对话合成等流程，我们生成了超过7.5万条带有详细心理学解释的心理学题目问答对、以及7.3万条共情对话数据。在此基础上，我们利用多模型的选择，筛选出高难度的“挑战题”，以用于强化模型的复杂推理能力，其余数据则被划分为“非挑战题”。
+![Our proposed pipeline for generating high-quality psychology data.](figure/pipeline.png)
+
+模型首先在海量的“非挑战题”（包括心理学题目和共情对话数据）进行SFT，为模型注入广泛的专业知识和共情能力。在此基础上，模型基于“挑战题”进行GRPO强化学习训练，以进一步提高模型的复杂推理能力。
+
+在多个权威的心理学基准测试中，仅有7B参数的Psyche-R1，其表现不仅显著超越其他同等规模的模型，甚至与671B参数的DeepSeek-R1表现相当。无论是在选择题还是开放式问答中，Psyche-R1都展现出了卓越的心理学领域能力。
+
 ## 致谢
 
 模型训练基于[LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory)和[VeRL](https://github.com/volcengine/verl)框架进行。
