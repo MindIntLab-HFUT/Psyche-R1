@@ -4,25 +4,25 @@
 Paper here -> [Psyche-R1: Towards Reliable Psychological LLMs through Unified Empathy, Expertise, and Reasoning](https://arxiv.org/pdf/2508.10848)
 
 ## 最近更新
-🔥[2025.8.16] 中文心理推理大模型Psyche-R1（亦称PsycoLLM-R1）正式发布！如有需要下载模型，请点击此处：[MACLAB-HFUT/Psyche-R1](https://huggingface.co/MACLAB-HFUT/Psyche-R1)
+🔥[2025.8.16] 中文心理推理大模型 Psyche-R1（亦称PsycoLLM-R1）正式发布！如有需要下载模型，请点击此处：[MACLAB-HFUT/Psyche-R1](https://huggingface.co/MACLAB-HFUT/Psyche-R1)
 
 ## 简介
 
-自[PsycoLLM](https://github.com/MACLAB-HFUT/PsycoLLM)发布以来，我们始终致力于探索AI+心理健康领域，寻求进一步的提升与突破。
+自 [PsycoLLM](https://github.com/MACLAB-HFUT/PsycoLLM) 发布以来，我们始终致力于探索AI+心理健康领域，寻求进一步的提升与突破。
 
-现有的心理大模型，如[EmoLLM](https://github.com/SmartFlowAI/EmoLLM)和[SoulChat](https://github.com/scutcyr/SoulChat)，普遍强调情感支持与陪伴，侧重于提高模型的共情能力。然而，它们往往缺乏扎实的心理学专业知识和复杂的逻辑推理能力，在深入分析和推理上表现欠佳。此外，一些在数学、编程等领域表现出色的推理大模型，侧重纯粹的逻辑推理，而缺乏心理学领域所需的共情和领域知识，导致在心理领域表现不佳。简单来说，就是“共情”、“领域知识”和“推理”很难兼得，这限制了心理大模型的表现。
+现有的心理大模型，如 [EmoLLM](https://github.com/SmartFlowAI/EmoLLM) 和 [SoulChat](https://github.com/scutcyr/SoulChat)，普遍强调情感支持与陪伴，侧重于提高模型的共情能力。然而，它们往往缺乏扎实的心理学专业知识和复杂的逻辑推理能力，在深入分析和推理上表现欠佳。此外，一些在数学、编程等领域表现出色的推理大模型，侧重纯粹的逻辑推理，而缺乏心理学领域所需的共情和领域知识，导致在心理领域表现不佳。简单来说，就是“共情”、“领域知识”和“推理”很难兼得，这限制了心理大模型的表现。
 
-为此，我们提出了中文心理推理大模型Psyche-R1，首次统一了共情、专业知识和推理能力。
+为此，我们提出了中文心理推理大模型 Psyche-R1，首次统一了共情、专业知识和推理能力。
 
 我们提出了一个全新的数据合成管道，如下图所示。通过数据清洗、题目生成、解释迭代和共情对话合成等流程，我们生成了超过7.5万条带有详细心理学解释的心理学题目问答对、以及7.3万条共情对话数据。在此基础上，我们利用多模型的选择，筛选出高难度的“挑战题”，以用于强化模型的复杂推理能力，其余数据则被划分为“非挑战题”。
 
 ![Our proposed pipeline for generating high-quality psychology data.](figure/pipeline.png)
 
-我们使用[Qwen2.5-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct)作为基座模型。模型首先在海量的“非挑战题”（包括心理学题目和共情对话数据）进行SFT，为模型注入广泛的专业知识和共情能力。在此基础上，模型基于“挑战题”进行GRPO强化学习训练，以进一步提高模型的复杂推理能力。
+我们使用 [Qwen2.5-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct) 作为基座模型。模型首先在海量的“非挑战题”（包括心理学题目和共情对话数据）进行 SFT，为模型注入广泛的专业知识和共情能力。在此基础上，模型基于“挑战题”进行GRPO强化学习训练，以进一步提高模型的复杂推理能力。
 
-我们随后进行了详细的评估实验。在多个权威的心理学基准测试中，仅有7B参数的Psyche-R1，其表现不仅显著超越其他同等规模的模型，甚至与671B参数的DeepSeek-R1表现相当。
+我们随后进行了详细的评估实验。在多个权威的心理学基准测试中，仅有 7B 参数的 Psyche-R1，其表现不仅显著超越其他同等规模的模型，甚至与671B参数的DeepSeek-R1表现相当。
 
-模型在 [Psychological Counselor Examination Benchmark (PCEB)](https://github.com/MACLAB-HFUT/PsycoLLM) 的实验结果如下。注意，我们仅展示了部分的实验结果，完整实验结果请看文章。其中，下划线数字表示 MMCQ 的弹性正确率，粗体数字表示该项中的最佳性能，平均值表示严格正确率的平均值，括号内的值表示 SMCQ 的严格正确率和 MMCQ 的弹性正确率的平均值。实验结果表明，无论是在选择题还是开放式问答中，Psyche-R1都展现出了卓越的心理学领域能力。
+模型在 [Psychological Counselor Examination Benchmark (PCEB)](https://github.com/MACLAB-HFUT/PsycoLLM) 的实验结果如下。注意，我们仅展示了部分的实验结果，完整实验结果请看文章。其中，下划线数字表示 MMCQ 的弹性正确率，粗体数字表示该项中的最佳性能，平均值表示严格正确率的平均值，括号内的值表示 SMCQ 的严格正确率和 MMCQ 的弹性正确率的平均值。实验结果表明，无论是在选择题还是开放式问答中，Psyche-R1 都展现出了卓越的心理学领域能力。
 <table>
     <thead>
         <tr>
@@ -238,7 +238,7 @@ Paper here -> [Psyche-R1: Towards Reliable Psychological LLMs through Unified Em
 
 <br>
 
-我们还进行了更详细、更全面的实验，包括在[CPsyExam](https://aclanthology.org/anthology-files/anthology-files/pdf/coling/2025.coling-main.745.pdf)和[PsyDT](https://arxiv.org/pdf/2412.13660)测试集上的实验，充分展现了Psyche-R1在心理学考试及咨询对话的能力。详细的实验结果，请查阅原文。
+我们还进行了更详细、更全面的实验，包括在 [CPsyExam](https://aclanthology.org/anthology-files/anthology-files/pdf/coling/2025.coling-main.745.pdf) 和 [PsyDT](https://arxiv.org/pdf/2412.13660) 测试集上的实验，充分展现了 Psyche-R1 在心理学考试及咨询对话的能力。详细的实验结果，请查阅原文。
 
 ## 快速使用
 1. 克隆本项目至本地
@@ -251,7 +251,7 @@ conda create -n psycher1 python=3.10
 conda activate psycher1
 pip install -r requirements.txt
 ```
-3. 运行python文件run.py
+3. 运行 Python 文件 run.py
 ```python
 deepspeed --num_gpus=2 run.py
 ```
@@ -259,7 +259,7 @@ deepspeed --num_gpus=2 run.py
 
 ## 致谢
 
-模型训练基于[LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory)和[VeRL](https://github.com/volcengine/verl)框架进行。
+模型训练基于 [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory) 和 [VeRL](https://github.com/volcengine/verl) 框架进行。
 
 同时，感谢以下同学对本项目的帮助，包括但不限于数据收集、数据处理等（排名不分先后）：邓宇航、金逸多、李想、刘悦、罗妍、王卫东、禹锦明
 
