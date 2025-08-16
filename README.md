@@ -240,6 +240,23 @@ Paper here -> [Psyche-R1: Towards Reliable Psychological LLMs through Unified Em
 
 我们还进行了更详细、更全面的实验，包括在[CPsyExam](https://aclanthology.org/anthology-files/anthology-files/pdf/coling/2025.coling-main.745.pdf)和[PsyDT](https://arxiv.org/pdf/2412.13660)测试集上的实验，充分展现了Psyche-R1在心理学考试及咨询对话的能力。详细的实验结果，请查阅原文。
 
+## 快速使用
+1.克隆本项目至本地
+```bash
+git clone https://github.com/MACLAB-HFUT/Psyche-R1.git
+```
+2.配置环境
+```bash
+conda create -n psycher1 python=3.10
+conda activate psycher1
+pip install -r requirements.txt
+```
+3.运行python文件run.py
+```python
+deepspeed --num_gpus=2 run.py
+```
+4.开始交互
+
 ## 致谢
 
 模型训练基于[LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory)和[VeRL](https://github.com/volcengine/verl)框架进行。
