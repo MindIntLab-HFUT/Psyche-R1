@@ -10,7 +10,7 @@ Paper here -> [Psyche-R1: Towards Reliable Psychological LLMs through Unified Em
 
 自 [PsycoLLM](https://github.com/MACLAB-HFUT/PsycoLLM) 发布以来，我们始终致力于探索AI+心理健康领域，寻求进一步的提升与突破。
 
-现有的心理大模型，如 [EmoLLM](https://github.com/SmartFlowAI/EmoLLM) 和 [SoulChat](https://github.com/scutcyr/SoulChat)，普遍强调情感支持与陪伴，侧重于提高模型的共情能力。然而，它们往往缺乏扎实的心理学专业知识和复杂的逻辑推理能力，在深入分析和推理上表现欠佳。此外，一些在数学、编程等领域表现出色的推理大模型，侧重纯粹的逻辑推理，而缺乏心理学领域所需的共情和领域知识，导致在心理领域表现不佳。简单来说，就是“共情”、“领域知识”和“推理”很难兼得，这限制了心理大模型的表现。
+现有的心理大模型，如 [EmoLLM](https://github.com/SmartFlowAI/EmoLLM) 和 [SoulChat](https://github.com/scutcyr/SoulChat)，普遍强调情感支持与陪伴，侧重于提高模型的共情能力。然而，它们往往缺乏扎实的心理学专业知识和复杂的逻辑推理能力，在深入分析和推理上表现欠佳。此外，一些在数学、编程等领域表现出色的推理大模型，侧重纯粹的逻辑推理，而缺乏心理学领域所需的共情和领域知识，导致在心理领域表现不佳。总而言之，就是“共情”、“领域知识”和“推理”很难兼得，这限制了心理大模型的表现。
 
 为此，我们提出了中文心理推理大模型 Psyche-R1，首次统一了共情、专业知识和推理能力。
 
