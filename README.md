@@ -252,7 +252,7 @@ pip install -r requirements.txt
 ```
 3. 运行 Python 文件 run.py
 ```python
-deepspeed --num_gpus=2 run.py
+deepspeed --num_gpus=1 run.py
 ```
 4. 开始交互
 
