@@ -237,6 +237,7 @@ Paper here -> [Psyche-R1: Towards Reliable Psychological LLMs through Unified Em
 </table>
 
 <br>
+
 我们还进行了更详细、更全面的实验，包括在 [CPsyExam](https://aclanthology.org/anthology-files/anthology-files/pdf/coling/2025.coling-main.745.pdf) 和 [PsyDT](https://arxiv.org/pdf/2412.13660) 测试集上的实验，充分展现了 Psyche-R1 在心理学考试及咨询对话的能力。详细的实验结果，请查阅原文。
 
 ## 快速使用
