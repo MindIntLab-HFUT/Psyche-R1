@@ -3,6 +3,7 @@
 
 Paper here -> [Psyche-R1: Towards Reliable Psychological LLMs through Unified Empathy, Expertise, and Reasoning](https://arxiv.org/pdf/2508.10848)
 
+\[ 简体中文 | [English](README_en.md) \]
 ## 最近更新
 🔥[2025.8.16] 中文心理推理大模型 Psyche-R1（亦称PsycoLLM-R1）正式发布！如有需要下载模型，请点击此处：[MACLAB-HFUT/Psyche-R1](https://huggingface.co/MACLAB-HFUT/Psyche-R1)
 
