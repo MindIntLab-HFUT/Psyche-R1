@@ -1,28 +1,30 @@
-# Chinese Psychological Reasoning LLM Psyche-R1
+# 中文心理推理大模型Psyche-R1
 <a href="./LICENSE"><img src="https://img.shields.io/badge/license-Apache%202-red.svg"></a><img src="https://img.shields.io/badge/python-3.8+-blue.svg" /><a href='https://arxiv.org/pdf/2508.10848'><img src='https://img.shields.io/badge/ArXiv-2508.10848-red'></a>
 
 Paper here -> [Psyche-R1: Towards Reliable Psychological LLMs through Unified Empathy, Expertise, and Reasoning](https://arxiv.org/pdf/2508.10848)
 
-## Latest News
-🔥[2025.8.16] We have released the Chinese Psychological Reasoning LLM Psyche-R1 (also known as PsycoLLM-R1)! For model downloads, please click here: [MACLAB-HFUT/Psyche-R1](https://huggingface.co/MACLAB-HFUT/Psyche-R1)
+\[ [English](README.md) | 简体中文 \]
 
-## Introduction
-Since the release of [PsycoLLM](https://github.com/MACLAB-HFUT/PsycoLLM), we have been committed to exploring the ``AI + Psychology", seeking further improvements and breakthroughs.
+## 最近更新
+🔥[2025.8.16] 中文心理推理大模型 Psyche-R1（亦称PsycoLLM-R1）正式发布！如有需要下载模型，请点击此处：[MACLAB-HFUT/Psyche-R1](https://huggingface.co/MACLAB-HFUT/Psyche-R1)
 
-Existing psychological LLMs generally emphasize emotional support and companionship, focusing on enhancing the model's empathetic capabilities. However, they may lack solid psychological professional knowledge and complex logical reasoning abilities, performing poorly in deep analysis and reasoning. Additionally, some reasoning-augmented LLMs that excel in mathematics, coding, and other fields emphasize logical reasoning but lack the empathy and domain expertise required in psychology, resulting in poor performance in the psychology domain. In summary, it is difficult to simultaneously achieve the unify of empathy, expertise, and reasoning, which limits the performance of psychological LLMs.
+## 简介
 
-To address this, we propose Psyche-R1, the first Chinese psychological reasoning LLM that unifies empathy, expertise, and reasoning capabilities to our knowledge.
+自 [PsycoLLM](https://github.com/MACLAB-HFUT/PsycoLLM) 发布以来，我们始终致力于探索AI+心理健康领域，寻求进一步的提升与突破。
 
-We propose a novel data synthesis pipeline, as illustrated in the figure below. Through processes including data cleaning, question generation, rationale iteration, and empathetic dialogue synthesis, we generated over 75k psychology QA pairs with detailed CoT rationales, as well as 73k empathetic dialogue data. Based on this, we utilize multi-LLM selection to filter out "challenge questions" to enhance the model's complex reasoning capabilities, while the remaining data is divided into "non-challenge questions."
+现有的心理大模型强调情感支持与陪伴，侧重于提高模型的共情能力。然而，它们可能缺乏扎实的心理学专业知识和复杂的逻辑推理能力，在深入分析和推理上表现欠佳。此外，一些在数学、编程等领域表现出色的推理大模型，侧重纯粹的逻辑推理，而缺乏心理学领域所需的共情和领域知识，导致在心理领域表现不佳。总而言之，就是“共情”、“领域知识”和“推理”很难兼得，这限制了心理大模型的表现。
+
+为此，我们提出了中文心理推理大模型 Psyche-R1，首次统一了共情、专业知识和推理能力。
+
+我们提出了一个全新的数据合成管道，如下图所示。通过数据清洗、题目生成、解释迭代和共情对话合成等流程，我们生成了超过7.5万条带有详细心理学解释的心理学题目问答对、以及7.3万条共情对话数据。在此基础上，我们利用多模型的选择，筛选出高难度的“挑战题”，以用于强化模型的复杂推理能力，其余数据则被划分为“非挑战题”。
 
 ![Our proposed pipeline for generating high-quality psychology data.](figure/pipeline.png)
 
-We select [Qwen2.5-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct) as the base model. The model first undergoes SFT on massive "non-challenge questions" (including psychological questions and empathetic dialogues) to infuse extensive expertise and empathetic capabilities. Subsequently, the model undergoes GRPO reinforcement learning based on "challenge questions" to further improve the model's complex reasoning abilities.
+我们使用 [Qwen2.5-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct) 作为基座模型。模型首先在海量的“非挑战题”（包括心理学题目和共情对话数据）进行 SFT，为模型注入广泛的专业知识和共情能力。在此基础上，模型基于“挑战题”进行GRPO强化学习训练，以进一步提高模型的复杂推理能力。
 
-We then conduct extensive evaluation experiments. On a range of psychological benchmarks, Psyche-R1 with only 7B parameters not only significantly outperforms other models of similar scale, but even achieves competitive performance relative to the 671B DeepSeek-R1.
+我们随后进行了详细的评估实验。在多个权威的心理学基准测试中，仅有 7B 参数的 Psyche-R1，其表现不仅显著超越其他同等规模的模型，甚至与671B参数的DeepSeek-R1表现相当。
 
-We present the results on the [Psychological Counselor Examination Benchmark (PCEB)](https://github.com/MACLAB-HFUT/PsycoLLM) which are shown below. Note that we only present partial experimental results; complete results can be found in the paper. Underlined numbers represent elastic accuracy for MMCQ, bold numbers indicate the best performance in each category, average values represent the mean of standard accuracy, and values in parentheses represent the average of standard accuracy for SMCQ and elastic accuracy for MMCQ. The experimental results show that Psyche-R1 demonstrates outstanding psychological domain capabilities in both multiple-choice questions and open-ended QA.
-
+模型在 [Psychological Counselor Examination Benchmark (PCEB)](https://github.com/MACLAB-HFUT/PsycoLLM) 的实验结果如下。注意，我们仅展示了部分的实验结果，完整实验结果请看文章。其中，下划线数字表示 MMCQ 的弹性正确率，粗体数字表示该项中的最佳性能，平均值表示严格正确率的平均值，括号内的值表示 SMCQ 的严格正确率和 MMCQ 的弹性正确率的平均值。实验结果表明，无论是在选择题还是开放式问答中，Psyche-R1 都展现出了卓越的心理学领域能力。
 <table>
     <thead>
         <tr>
@@ -238,31 +240,32 @@ We present the results on the [Psychological Counselor Examination Benchmark (PC
 
 <br>
 
-We also conducted more detailed and comprehensive experiments, including experiments on [CPsyExam](https://aclanthology.org/anthology-files/anthology-files/pdf/coling/2025.coling-main.745.pdf) and [PsyDT](https://arxiv.org/pdf/2412.13660) test sets, demonstrating Psyche-R1's capabilities in psychological examinations and counseling. For detailed experimental results, please refer to the original paper.
+我们还进行了更详细、更全面的实验，包括在 [CPsyExam](https://aclanthology.org/anthology-files/anthology-files/pdf/coling/2025.coling-main.745.pdf) 和 [PsyDT](https://arxiv.org/pdf/2412.13660) 测试集上的实验，充分展现了 Psyche-R1 在心理学考试及咨询对话的能力。详细的实验结果，请查阅原文。
 
-## Quick Start
-1. Clone this project locally
+## 快速使用
+1. 克隆本项目至本地
 ```bash
 git clone https://github.com/MACLAB-HFUT/Psyche-R1.git
 ```
-2. Set up the environment
+2. 配置环境
 ```bash
 conda create -n psycher1 python=3.10
 conda activate psycher1
 pip install -r requirements.txt
 ```
-3. Run the Python file run.py
+3. 运行 Python 文件 run.py
 ```python
 deepspeed --num_gpus=1 run.py
 ```
-4. Start interacting
+4. 开始交互
 
-## Acknowledgments
-Model training is based on the [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory) and [VeRL](https://github.com/volcengine/verl) frameworks.
+## 致谢
 
-We also thank the following students for their help with this project, including but not limited to data collection and data processing (in no particular order): Yuhang Deng, Yiduo Jin, Xiang Li, Yue Liu, Yan Luo, Weidong Wang, Jinming Yu
+模型训练基于 [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory) 和 [VeRL](https://github.com/volcengine/verl) 框架进行。
 
-## Citation
+同时，感谢以下同学对本项目的帮助，包括但不限于数据收集、数据处理等（排名不分先后）：邓宇航、金逸多、李想、刘悦、罗妍、王卫东、禹锦明
+
+## 引用
 
 If this work is helpful, please kindly cite as:
 
