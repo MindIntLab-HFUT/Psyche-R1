@@ -262,7 +262,7 @@ deepspeed --num_gpus=1 run.py
 ## Acknowledgments
 Model training is based on the [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory) and [VeRL](https://github.com/volcengine/verl) frameworks.
 
-We also thank the following students for their help with this project, including but not limited to data collection and data processing (in no particular order): Yuhang Deng, Yiduo Jin, Xiang Li, Yue Liu, Yan Luo, Weidong Wang, Jinming Yu
+We also thank the following students for their help with this project, including but not limited to data collection, data processing , and so on (in no particular order): Yuhang Deng, Yiduo Jin, Xiang Li, Yue Liu, Yan Luo, Weidong Wang, Jinming Yu
 
 ## Citation
 
