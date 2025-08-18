@@ -9,7 +9,7 @@ Paper here -> [Psyche-R1: Towards Reliable Psychological LLMs through Unified Em
 🔥[2025.8.16] We have released the Chinese Psychological Reasoning LLM Psyche-R1 (also known as PsycoLLM-R1)! For model downloads, please click here: [MACLAB-HFUT/Psyche-R1](https://huggingface.co/MACLAB-HFUT/Psyche-R1)
 
 ## Introduction
-Since the release of [PsycoLLM](https://github.com/MACLAB-HFUT/PsycoLLM), we have been committed to exploring the ``AI + Psychology", seeking further improvements and breakthroughs.
+Since the release of [PsycoLLM](https://github.com/MACLAB-HFUT/PsycoLLM), we have been committed to exploring the "AI + Psychology", seeking further improvements and breakthroughs.
 
 Existing psychological LLMs generally emphasize emotional support and companionship, focusing on enhancing the model's empathetic capabilities. However, they may lack solid psychological professional knowledge and complex logical reasoning abilities, performing poorly in deep analysis and reasoning. Additionally, some reasoning-augmented LLMs that excel in mathematics, coding, and other fields emphasize logical reasoning but lack the empathy and domain expertise required in psychology, resulting in poor performance in the psychology domain. In summary, it is difficult to simultaneously achieve the unify of empathy, expertise, and reasoning, which limits the performance of psychological LLMs.
 
