@@ -1,17 +1,15 @@
 # Psyche-R1
 <a href="./LICENSE"><img src="https://img.shields.io/badge/license-Apache%202-red.svg"></a><img src="https://img.shields.io/badge/python-3.8+-blue.svg" /><a href='https://arxiv.org/pdf/2508.10848'><img src='https://img.shields.io/badge/ArXiv-2508.10848-red'></a>
 
-Psyche-R1: Towards Reliable Psychological LLMs through Unified Empathy, Expertise, and Reasoning [Psyche-R1: Towards Reliable Psychological LLMs through Unified Empathy, Expertise, and Reasoning](https://arxiv.org/pdf/2508.10848)
+[Psyche-R1: Towards Reliable Psychological LLMs through Unified Empathy, Expertise, and Reasoning](https://arxiv.org/pdf/2508.10848)
 
 \[ English | [简体中文](README_zh.md) \]
 
 ## Latest News
-🔥[2025.8.16] We have released the Chinese Psychological Reasoning LLM Psyche-R1 (also known as PsycoLLM-R1)! For model downloads, please click here: [MACLAB-HFUT/Psyche-R1](https://huggingface.co/MACLAB-HFUT/Psyche-R1)
+🔥[2025.8.16] We have released the Chinese Psychological Reasoning LLM Psyche-R1! For model downloads, please click here: [MACLAB-HFUT/Psyche-R1](https://huggingface.co/MACLAB-HFUT/Psyche-R1)
 
 ## Introduction
 Psyche-R1 is a Chinese psychological reasoning LLM that unifies empathy, expertise, and reasoning capabilities.
-
-## Data Construction
 We propose a novel data synthesis pipeline, as illustrated in the figure below. Through processes including data cleaning, question generation, rationale iteration, and empathetic dialogue synthesis, we generated psychology QA pairs with detailed rationales, as well as empathetic dialogue data. Based on this, we utilize multi-LLM selection to filter out "challenge questions" to enhance the model's complex reasoning capabilities, while the remaining data is divided into "non-challenge questions."
 
 ![Our proposed pipeline for generating high-quality psychology data.](figure/pipeline.png)
@@ -19,8 +17,7 @@ We propose a novel data synthesis pipeline, as illustrated in the figure below. 
 We select [Qwen2.5-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct) as the base model. The model first undergoes SFT on massive "non-challenge questions" (including psychological questions and empathetic dialogues) to infuse extensive expertise and empathetic capabilities. Subsequently, the model undergoes GRPO reinforcement learning based on "challenge questions" to further improve the model's complex reasoning abilities.
 
 ## Experimental Results
-We present the results on the [Psychological Counselor Examination Benchmark (PCEB)](https://github.com/MACLAB-HFUT/PsycoLLM) which are shown below. N
-
+We present the results on the [Psychological Counselor Examination Benchmark (PCEB)](https://github.com/MACLAB-HFUT/PsycoLLM) which are shown below. 
 <table>
     <thead>
         <tr>
