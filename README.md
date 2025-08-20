@@ -1,7 +1,7 @@
-# Chinese Psychological Reasoning LLM Psyche-R1
+# Psyche-R1
 <a href="./LICENSE"><img src="https://img.shields.io/badge/license-Apache%202-red.svg"></a><img src="https://img.shields.io/badge/python-3.8+-blue.svg" /><a href='https://arxiv.org/pdf/2508.10848'><img src='https://img.shields.io/badge/ArXiv-2508.10848-red'></a>
 
-Paper here -> [Psyche-R1: Towards Reliable Psychological LLMs through Unified Empathy, Expertise, and Reasoning](https://arxiv.org/pdf/2508.10848)
+Psyche-R1: Towards Reliable Psychological LLMs through Unified Empathy, Expertise, and Reasoning [Psyche-R1: Towards Reliable Psychological LLMs through Unified Empathy, Expertise, and Reasoning](https://arxiv.org/pdf/2508.10848)
 
 \[ English | [简体中文](README_zh.md) \]
 
@@ -9,21 +9,17 @@ Paper here -> [Psyche-R1: Towards Reliable Psychological LLMs through Unified Em
 🔥[2025.8.16] We have released the Chinese Psychological Reasoning LLM Psyche-R1 (also known as PsycoLLM-R1)! For model downloads, please click here: [MACLAB-HFUT/Psyche-R1](https://huggingface.co/MACLAB-HFUT/Psyche-R1)
 
 ## Introduction
-Since the release of [PsycoLLM](https://github.com/MACLAB-HFUT/PsycoLLM), we have been committed to exploring the "AI + Psychology", seeking further improvements and breakthroughs.
+Psyche-R1 is a Chinese psychological reasoning LLM that unifies empathy, expertise, and reasoning capabilities.
 
-Existing psychological LLMs generally emphasize emotional support and companionship, focusing on enhancing the model's empathetic capabilities. However, they may lack solid psychological professional knowledge and complex logical reasoning abilities, performing poorly in deep analysis and reasoning. Additionally, some reasoning-augmented LLMs that excel in mathematics, coding, and other fields emphasize logical reasoning but lack the empathy and domain expertise required in psychology, resulting in poor performance in the psychology domain. In summary, it is difficult to simultaneously achieve the unify of empathy, expertise, and reasoning, which limits the performance of psychological LLMs.
-
-To address this, we propose Psyche-R1, the first Chinese psychological reasoning LLM that unifies empathy, expertise, and reasoning capabilities to our knowledge.
-
-We propose a novel data synthesis pipeline, as illustrated in the figure below. Through processes including data cleaning, question generation, rationale iteration, and empathetic dialogue synthesis, we generated over 75k psychology QA pairs with detailed CoT rationales, as well as 73k empathetic dialogue data. Based on this, we utilize multi-LLM selection to filter out "challenge questions" to enhance the model's complex reasoning capabilities, while the remaining data is divided into "non-challenge questions."
+## Data Construction
+We propose a novel data synthesis pipeline, as illustrated in the figure below. Through processes including data cleaning, question generation, rationale iteration, and empathetic dialogue synthesis, we generated psychology QA pairs with detailed rationales, as well as empathetic dialogue data. Based on this, we utilize multi-LLM selection to filter out "challenge questions" to enhance the model's complex reasoning capabilities, while the remaining data is divided into "non-challenge questions."
 
 ![Our proposed pipeline for generating high-quality psychology data.](figure/pipeline.png)
 
 We select [Qwen2.5-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct) as the base model. The model first undergoes SFT on massive "non-challenge questions" (including psychological questions and empathetic dialogues) to infuse extensive expertise and empathetic capabilities. Subsequently, the model undergoes GRPO reinforcement learning based on "challenge questions" to further improve the model's complex reasoning abilities.
 
-We then conduct extensive evaluation experiments. On a range of psychological benchmarks, Psyche-R1 with only 7B parameters not only significantly outperforms other models of similar scale, but even achieves competitive performance relative to the 671B DeepSeek-R1.
-
-We present the results on the [Psychological Counselor Examination Benchmark (PCEB)](https://github.com/MACLAB-HFUT/PsycoLLM) which are shown below. Note that we only present partial experimental results; complete results can be found in the paper. Underlined numbers represent elastic accuracy for MMCQ, bold numbers indicate the best performance in each category, average values represent the mean of standard accuracy, and values in parentheses represent the average of standard accuracy for SMCQ and elastic accuracy for MMCQ. The experimental results show that Psyche-R1 demonstrates outstanding psychological domain capabilities in both multiple-choice questions and open-ended QA.
+## Experimental Results
+We present the results on the [Psychological Counselor Examination Benchmark (PCEB)](https://github.com/MACLAB-HFUT/PsycoLLM) which are shown below. N
 
 <table>
     <thead>
