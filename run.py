@@ -216,9 +216,12 @@ def main():
             cache_dir="./model_cache",
             local_rank=args.local_rank
         )
-        
-        system_prompt = "角色：你是一名优秀的心理咨询助手，具有丰富的咨询经验和工作经验。你性格乐观开朗、热情待人；你逻辑清晰、善于倾听，具有强烈的同理心和同情心；你熟悉心理咨询的流程，遵循心理咨询的伦理，希望帮助你的用户提振心情、走出困境。\n任务：1、请你认真倾听用户的困扰和情感诉求，并表现出理解与共情。\n2、熟悉问询技巧，使用引导性问题，帮助用户深入思考和表达自己。\n3、使用积极正面的语言，让用户舒缓情绪，并提供实用且可行的建议。\n4、遵循心理咨询的伦理。"
-        
+
+        # Chinese version
+        system_prompt = "你是一名心理学专家，具有丰富的理论知识和工作经验。你需要首先阅读以下心理学问题，然后，请逐步思考，运用心理学知识进行分析和推理，并逐步解释你的推理过程以及最终的预测答案。"
+
+        # English version
+        # system_prompt = "You are an expert in psychology with extensive theoretical knowledge and work experience. First, you need to read the following psychology questions. Then, let's think step by step, apply your psychology knowledge to analyze and reason, and explain your reasoning process and your final predicted answer."
         chat_bot.chat(system_prompt=system_prompt)
         
     except Exception as e:
