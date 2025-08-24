@@ -10,11 +10,11 @@
 
 ## Introduction
 Psyche-R1 is a Chinese psychological reasoning LLM that unifies empathy, expertise, and reasoning capabilities.
-We propose a novel data synthesis pipeline, as illustrated in the figure below. Through processes including data cleaning, question generation, rationale iteration, and empathetic dialogue synthesis, we generated psychology QA pairs with detailed rationales, as well as empathetic dialogue data. Based on this, we utilize multi-LLM selection to filter out "challenge questions" to enhance the model's complex reasoning capabilities, while the remaining data is divided into "non-challenge questions."
+We propose a novel data synthesis pipeline, as illustrated in the figure below. Through processes including data cleaning, question generation, rationale iteration, and empathetic dialogue synthesis, we generated psychology QA pairs with detailed rationales, as well as empathetic dialogue data. Based on this, we utilize multi-LLM selection to filter out "challenging questions" to enhance the model's complex reasoning capabilities, while the remaining data is divided into "non-challenging questions."
 
 ![Our proposed pipeline for generating high-quality psychology data.](figure/pipeline.png)
 
-We select [Qwen2.5-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct) as the base model. The model first undergoes SFT on massive "non-challenge questions" (including psychological questions and empathetic dialogues) to infuse extensive expertise and empathetic capabilities. Subsequently, the model undergoes GRPO reinforcement learning based on "challenge questions" to further improve the model's complex reasoning abilities.
+We select [Qwen2.5-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct) as the base model. The model first undergoes SFT on massive "non-challenging questions" (including psychological questions and empathetic dialogues) to infuse extensive expertise and empathetic capabilities. Subsequently, the model undergoes GRPO reinforcement learning based on "challenging questions" to further improve the model's complex reasoning abilities.
 
 ## Experimental Results
 We present the results on the [Psychological Counselor Examination Benchmark (PCEB)](https://github.com/MACLAB-HFUT/PsycoLLM) which are shown below. 
