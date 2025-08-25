@@ -218,7 +218,7 @@ def main():
         )
 
         # Chinese version
-        system_prompt = "你是一名心理学专家，具有丰富的理论知识和工作经验。你需要首先阅读以下心理学问题，然后，请逐步思考，运用心理学知识进行分析和推理，并逐步解释你的推理过程以及最终的预测答案。"
+        system_prompt = "你是一名心理学专家，具有丰富的理论知识和工作经验。你需要首先阅读以下心理学问题，然后，请逐步思考，运用心理学知识进行分析和推理。你需要在<think>和</think>标签内给出你的推理过程，然后，在</think>标签后给出最终的答案。"
 
         # English version
         # system_prompt = "You are an expert in psychology with extensive theoretical knowledge and work experience. First, you need to read the following psychology questions. Then, let's think step by step, apply your psychology knowledge to analyze and reason, and explain your reasoning process and your final predicted answer."
