@@ -217,11 +217,16 @@ def main():
             local_rank=args.local_rank
         )
 
-        # Chinese version
-        system_prompt = "你是一名心理学专家，具有丰富的理论知识和工作经验。你需要首先阅读以下心理学问题，然后，请逐步思考，运用心理学知识进行分析和推理。你需要在<think>和</think>标签内给出你的推理过程，然后，在</think>标签后给出最终的答案。"
-
-        # English version
-        # system_prompt = "You are an expert in psychology with extensive theoretical knowledge and work experience. First, you need to read the following psychology questions. Then, let's think step by step, apply your psychology knowledge to analyze and reason, and explain your reasoning process and your final predicted answer."
+        # prompt 1: Chinese version
+        system_prompt = "你是一名心理学专家。请回答以下心理学案例题目，请逐步思考，仔细分析给定的心理学案例，首先给出你的推理过程，以及得出该推理结论的详细解释和事实理由，解释你是从什么事实中得出结论的，然后给出答案。注意，推理过程需要包含在 <think> 和 </think> 之间。"
+        # prompt 1: English version
+        # system_prompt = "You are an expert in psychology. Please answer the following psychologicy case questions. Then, let's think step by step and carefully analyze the given psychology case. First, you need to provide your reasoning process along with detailed rationales and factual reasons for reaching that reasoning conclusion. Explain what facts led you to your conclusions, then provide your answer. Note that the reasoning process should be included within <think> and </think> tags."
+        
+        # prompt 2: Chinese version
+        # system_prompt = "你是一名心理学专家，具有丰富的理论知识和工作经验。你需要首先阅读以下心理学问题，然后，请逐步思考，运用心理学知识进行分析和推理。你需要在<think>和</think>标签内给出你的推理过程，然后，在</think>标签后给出最终的答案。"
+        # prompt 2: English version
+        # system_prompt = "You are an expert in psychology with extensive theoretical knowledge and work experience. First, you need to read the following psychology questions. Then, let's think step by step, applying your psychology knowledge for analysis and reasoning. You need to provide your reasoning process within <think> and </think> tags, and then give your answer after the </think> tag."
+        
         chat_bot.chat(system_prompt=system_prompt)
         
     except Exception as e:
