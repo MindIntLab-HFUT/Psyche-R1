@@ -17,7 +17,7 @@ We propose a novel data synthesis pipeline, as illustrated in the figure below. 
 We select [Qwen2.5-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct) as the base model. The model first undergoes SFT on massive "non-challenging questions" (including psychological questions and empathetic dialogues) to infuse extensive expertise and empathetic capabilities. Subsequently, the model undergoes GRPO reinforcement learning based on "challenging questions" to further improve the model's complex reasoning abilities.
 
 ## Experimental Results
-We present the results on the [Psychological Counselor Examination Benchmark (PCEB)](https://github.com/MACLAB-HFUT/PsycoLLM) which are shown below. 
+We present the results on the [Psychological Counselor Examination Benchmark (PCEB)](https://github.com/MindIntLab/PsycoLLM) which are shown below. 
 <table>
     <thead>
         <tr>
@@ -251,6 +251,7 @@ pip install -r requirements.txt
 deepspeed --num_gpus=1 run.py
 ```
 4. Start interacting
+Note that for multi-turn dialogue, we recommend you to prompt the model to output the reasoning process enclosed with <think> and </think> tags explicitly (as in run.py).
 
 ## Acknowledgments
 Model training is based on the [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory) and [VeRL](https://github.com/volcengine/verl) frameworks.
