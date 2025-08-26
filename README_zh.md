@@ -24,7 +24,7 @@ Paper here -> [Psyche-R1: Towards Reliable Psychological LLMs through Unified Em
 
 我们随后进行了详细的评估实验。在多个权威的心理学基准测试中，仅有 7B 参数的 Psyche-R1，其表现不仅显著超越其他同等规模的模型，甚至与671B参数的DeepSeek-R1表现相当。
 
-模型在 [Psychological Counselor Examination Benchmark (PCEB)](https://github.com/MACLAB-HFUT/PsycoLLM) 的实验结果如下。注意，我们仅展示了部分的实验结果，完整实验结果请看文章。其中，下划线数字表示 MMCQ 的弹性正确率，粗体数字表示该项中的最佳性能，平均值表示严格正确率的平均值，括号内的值表示 SMCQ 的严格正确率和 MMCQ 的弹性正确率的平均值。实验结果表明，无论是在选择题还是开放式问答中，Psyche-R1 都展现出了卓越的心理学领域能力。
+模型在 [Psychological Counselor Examination Benchmark (PCEB)](https://github.com/MindIntLab/PsycoLLM) 的实验结果如下。注意，我们仅展示了部分的实验结果，完整实验结果请看文章。其中，下划线数字表示 MMCQ 的弹性正确率，粗体数字表示该项中的最佳性能，平均值表示严格正确率的平均值，括号内的值表示 SMCQ 的严格正确率和 MMCQ 的弹性正确率的平均值。实验结果表明，无论是在选择题还是开放式问答中，Psyche-R1 都展现出了卓越的心理学领域能力。
 <table>
     <thead>
         <tr>
