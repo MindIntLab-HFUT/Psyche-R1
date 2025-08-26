@@ -6,18 +6,20 @@ import deepspeed
 import torch.distributed as dist
 
 from pathlib import Path
+from prompt_toolkit import prompt
 from typing import Optional, Dict, List
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from huggingface_hub import (login, HfFolder, snapshot_download,)
 
 
+
 class PsycheR1Chat:
     def __init__(
         self,
-        model_name: str = "MACLAB-HFUT/Psyche-R1",
+        model_name: str = "MindIntLab/Psyche-R1",
         model_path: Optional[str] = None,
         device: str = "cuda" if torch.cuda.is_available() else "cpu",
-        max_new_tokens: int = 512,
+        max_new_tokens: int = 2048, 
         temperature: float = 0.7,
         top_p: float = 0.9,
         use_auth_token: Optional[str] = None,
@@ -156,7 +158,7 @@ class PsycheR1Chat:
                     temperature=self.temperature,
                     top_p=self.top_p,
                     do_sample=True,
-                    pad_token_id=self.tokenizer.pad_token_id,
+                    pad_token_id=self.tokenizer.eos_token_id, 
                     **kwargs
                 )
             
@@ -169,24 +171,38 @@ class PsycheR1Chat:
 
         except Exception as e:
             self.logger.error(f"An error occurred while generating the response: {str(e)}")
+            self.messages.pop()
             return {"error": str(e)}
     
     def chat(self, system_prompt: Optional[str] = None):
-        
         if self.local_rank in [-1, 0]:
             print("Welcome to Psyche-R1, the Chinese psychological reasoning LLM! Type 'quit' or 'exit' to end the conversation.")
             if system_prompt:
                 print(f"\nSystem prompt: {system_prompt}\n")
             
             while True:
-                user_input = input("\n用户: ").strip()
-                if user_input.lower() in ['quit', 'exit']:
-                    print("\nThank you for using the Chinese psychological reasoning LLM Psyche-R1. Goodbye!")
+                try:
+                    user_input = prompt("\nUser: ").strip()
+                except (EOFError, KeyboardInterrupt):
+                    print("\n\nThanks for using the Chinese psychological reasoning LLM Psyche-R1. Goodbye!")
                     break
+
+                if user_input.lower() in ['quit', 'exit']:
+                    print("\nThanks for using the Chinese psychological reasoning LLM Psyche-R1. Goodbye!")
+                    break
+                
+                add_prefix_prompt = (
+                    # Chinese version
+                    "你必须在<think>和</think>标签内给出你的推理过程，然后，在</think>标签后给出最终的答案。"
+                    f"\n\n以下是我的问题：\n{user_input}"
+                    # English version
+                    # "You need to provide your reasoning process within <think> and </think> tags, and then give your answer after the </think> tag."
+                    # f"\n\nHere is my question:\n{user_input}"
+                )
                     
                 try:
                     response = self.generate_response(
-                        user_input,
+                        add_prefix_prompt,
                         system_prompt=system_prompt if not self.messages else None
                     )
                     if "error" in response:
@@ -194,11 +210,10 @@ class PsycheR1Chat:
                     else:
                         print("\nAssistant:", response["response"])
                 except Exception as e:
-                    print(f"\nError: {str(e)}")
+                    print(f"\nError occurred: {str(e)}")
                     continue
 
     def clear_history(self):
-
         self.messages = []
         self.logger.info("Conversation history cleared.")
 
@@ -212,7 +227,7 @@ def main():
     
     try:
         chat_bot = PsycheR1Chat(
-            model_path="MACLAB-HFUT/Psyche-R1", # this is your model
+            model_path="MindIntLab/Psyche-R1", # this is your model path
             cache_dir="./model_cache",
             local_rank=args.local_rank
         )
@@ -223,7 +238,7 @@ def main():
         # system_prompt = "You are an expert in psychology. Please answer the following psychologicy case questions. Then, let's think step by step and carefully analyze the given psychology case. First, you need to provide your reasoning process along with detailed rationales and factual reasons for reaching that reasoning conclusion. Explain what facts led you to your conclusions, then provide your answer. Note that the reasoning process should be included within <think> and </think> tags."
         
         # prompt 2: Chinese version
-        # system_prompt = "你是一名心理学专家，具有丰富的理论知识和工作经验。你需要首先阅读以下心理学问题，然后，请逐步思考，运用心理学知识进行分析和推理。你需要在<think>和</think>标签内给出你的推理过程，然后，在</think>标签后给出最终的答案。"
+        # system_prompt = "你是一名心理学专家，具有丰富的理论知识和工作经验。你需要首先阅读以下心理学问题，然后，请逐步思考，运用心理学知识进行分析和推理。你必须在<think>和</think>标签内给出你的推理过程，然后，在</think>标签后给出最终的答案。"
         # prompt 2: English version
         # system_prompt = "You are an expert in psychology with extensive theoretical knowledge and work experience. First, you need to read the following psychology questions. Then, let's think step by step, applying your psychology knowledge for analysis and reasoning. You need to provide your reasoning process within <think> and </think> tags, and then give your answer after the </think> tag."
         
