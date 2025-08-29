@@ -1,4 +1,4 @@
-![Psyche-R1 logo](figure/logo.png)# Psyche-R1
+# ![Psyche-R1 logo](figure/logo.png)Psyche-R1
 <a href="./LICENSE"><img src="https://img.shields.io/badge/license-Apache%202-red.svg"></a><img src="https://img.shields.io/badge/python-3.8+-blue.svg" /><a href='https://arxiv.org/pdf/2508.10848'><img src='https://img.shields.io/badge/ArXiv-2508.10848-red'></a>
 
 [Psyche-R1: Towards Reliable Psychological LLMs through Unified Empathy, Expertise, and Reasoning](https://arxiv.org/pdf/2508.10848)
