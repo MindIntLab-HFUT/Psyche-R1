@@ -263,13 +263,10 @@ We also thank the following students for their help with this project, including
 If this work is helpful, please kindly cite as:
 
 ```bibtex
-@misc{dai2025psycher1reliablepsychologicalllms,
-      title={Psyche-R1: Towards Reliable Psychological LLMs through Unified Empathy, Expertise, and Reasoning}, 
-      author={Chongyuan Dai and Jinpeng Hu and Hongchang Shi and Zhuo Li and Xun Yang and Meng Wang},
-      year={2025},
-      eprint={2508.10848},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2508.10848}, 
+@article{dai2025psyche,
+  title={Psyche-R1: Towards Reliable Psychological LLMs through Unified Empathy, Expertise, and Reasoning},
+  author={Dai, Chongyuan and Hu, Jinpeng and Shi, Hongchang and Li, Zhuo and Yang, Xun and Wang, Meng},
+  journal={arXiv preprint arXiv:2508.10848},
+  year={2025}
 }
 ```
