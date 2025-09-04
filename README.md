@@ -17,7 +17,7 @@ We propose a novel data synthesis pipeline, as illustrated in the figure below. 
 We select [Qwen2.5-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct) as the base model. The model first undergoes SFT on massive "non-challenging questions" (including psychological questions and empathetic dialogues) to infuse extensive expertise and empathetic capabilities. Subsequently, the model undergoes GRPO reinforcement learning based on "challenging questions" to further improve the model's complex reasoning abilities.
 
 ## Experimental Results
-We present the results on the [Psychological Counselor Examination Benchmark (PCEB)](https://github.com/MindIntLab/PsycoLLM) which are shown below. 
+We present the results on the [Psychological Counselor Examination Benchmark (PCEB)](https://github.com/MindIntLab-HFUT/PsycoLLM) which are shown below. 
 <table>
     <thead>
         <tr>
