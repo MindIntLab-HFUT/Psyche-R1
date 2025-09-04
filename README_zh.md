@@ -6,11 +6,11 @@ Paper here -> [Psyche-R1: Towards Reliable Psychological LLMs through Unified Em
 \[ [English](README.md) | 简体中文 \]
 
 ## 最近更新
-🔥[2025.8.16] 中文心理推理大模型 Psyche-R1正式发布！如有需要下载模型，请点击此处：[MindIntLab/Psyche-R1](https://huggingface.co/MindIntLab-HFUT/Psyche-R1)
+🔥[2025.8.16] 中文心理推理大模型 Psyche-R1正式发布！如有需要下载模型，请点击此处：[MindIntLab/Psyche-R1](https://huggingface.co/MindIntLab/Psyche-R1)
 
 ## 简介
 
-自 [PsycoLLM](https://github.com/MindIntLab/PsycoLLM) 发布以来，我们始终致力于探索AI+心理健康领域，寻求进一步的提升与突破。
+自 [PsycoLLM](https://github.com/MindIntLab-HFUT/PsycoLLM) 发布以来，我们始终致力于探索AI+心理健康领域，寻求进一步的提升与突破。
 
 现有的心理大模型强调情感支持与陪伴，侧重于提高模型的共情能力。然而，它们可能缺乏扎实的心理学专业知识和复杂的逻辑推理能力，在深入分析和推理上表现欠佳。此外，一些在数学、编程等领域表现出色的推理大模型，侧重纯粹的逻辑推理，而缺乏心理学领域所需的共情和领域知识，导致在心理领域表现不佳。总而言之，就是“共情”、“领域知识”和“推理”很难兼得，这限制了心理大模型的表现。
 
