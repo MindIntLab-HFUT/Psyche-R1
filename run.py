@@ -16,7 +16,7 @@ from huggingface_hub import (login, HfFolder, snapshot_download,)
 class PsycheR1Chat:
     def __init__(
         self,
-        model_name: str = "MindIntLab/Psyche-R1",
+        model_name: str = "MindIntLab-HFUT/Psyche-R1",
         model_path: Optional[str] = None,
         device: str = "cuda" if torch.cuda.is_available() else "cpu",
         max_new_tokens: int = 2048, 
