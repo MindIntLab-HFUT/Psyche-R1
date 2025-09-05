@@ -238,7 +238,7 @@ We also conducted more detailed and comprehensive experiments, including experim
 ## Quick Start
 1. Clone this project locally
 ```bash
-git clone https://github.com/MACLAB-HFUT/Psyche-R1.git
+git clone https://github.com/MindIntLab-HFUT/Psyche-R1.git
 ```
 2. Set up the environment
 ```bash
