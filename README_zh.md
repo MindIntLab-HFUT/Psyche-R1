@@ -245,7 +245,7 @@ Paper here -> [Psyche-R1: Towards Reliable Psychological LLMs through Unified Em
 ## 快速使用
 1. 克隆本项目至本地
 ```bash
-git clone https://github.com/MACLAB-HFUT/Psyche-R1.git
+git clone https://github.com/MindIntLab-HFUT/Psyche-R1.git
 ```
 2. 配置环境
 ```bash
