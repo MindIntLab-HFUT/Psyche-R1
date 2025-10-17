@@ -7,6 +7,7 @@
 
 ## Latest News
 🔥[2025.10.17] We've developed an APP for our model which is available for Windows, Linux, and Android users. Download it here: [Psyche-R1-APP](https://github.com/WangWindow/AvaMujica/releases/tag/v0.4.2).
+
 🔥[2025.8.16] We have released the Chinese Psychological Reasoning LLM Psyche-R1! For model downloads, please click here: [MindIntLab/Psyche-R1](https://huggingface.co/MindIntLab/Psyche-R1)
 
 ## Introduction
@@ -257,7 +258,7 @@ Note that for multi-turn dialogue, we recommend you to prompt the model to outpu
 ## Acknowledgments
 Model training is based on the [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory) and [VeRL](https://github.com/volcengine/verl) frameworks.
 
-We also thank the following students for their help with this project, including but not limited to data collection, data processing , and so on (in no particular order): Yuhang Deng, Yiduo Jin, Xiang Li, Yue Liu, Yan Luo, Weidong Wang, Jinming Yu
+We also thank the following students for their help with this project, including but not limited to data collection, data processing , and so on (in no particular order): Yuhang Deng, Yiduo Jin, Xiang Li, Yue Liu, Yan Luo, Weidong Wang, Jinming Yu. We also thank Weidong Wang for developing an impressive APP!
 
 ## Citation
 
