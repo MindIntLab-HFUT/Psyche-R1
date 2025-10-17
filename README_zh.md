@@ -6,6 +6,8 @@ Paper here -> [Psyche-R1: Towards Reliable Psychological LLMs through Unified Em
 \[ [English](README.md) | 简体中文 \]
 
 ## 最近更新
+🔥[2025.10.17] 我们开发了一款 APP ，支持 Windows、Linux 和 Android 平台。请点击此处下载：[Psyche-R1-APP](https://github.com/WangWindow/AvaMujica/releases/tag/v0.4.2).
+
 🔥[2025.8.16] 中文心理推理大模型 Psyche-R1正式发布！如有需要下载模型，请点击此处：[MindIntLab/Psyche-R1](https://huggingface.co/MindIntLab/Psyche-R1)
 
 ## 简介
@@ -263,7 +265,7 @@ deepspeed --num_gpus=1 run.py
 
 模型训练基于 [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory) 和 [VeRL](https://github.com/volcengine/verl) 框架进行。
 
-同时，感谢以下同学对本项目的帮助，包括但不限于数据收集、数据处理等（排名不分先后）：邓宇航、金逸多、李想、刘悦、罗妍、王卫东、禹锦明
+同时，感谢以下同学对本项目的帮助，包括但不限于数据收集、数据处理等（排名不分先后）：邓宇航、金逸多、李想、刘悦、罗妍、王卫东、禹锦明。我们还感谢王卫东为开发 APP 做出的贡献。
 
 ## 引用
 
