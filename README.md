@@ -3,12 +3,14 @@
 
 [Psyche-R1: Towards Reliable Psychological LLMs through Unified Empathy, Expertise, and Reasoning](https://arxiv.org/pdf/2508.10848)
 
-\[ English | [简体中文](README_zh.md) \]
+\[ English | [中文](README_zh.md) \]
 
 ## Latest News
-🔥[2025.10.17] We've developed an APP for our model which is available for Windows, Linux, and Android users. Download it here: [Psyche-R1-APP](https://github.com/WangWindow/AvaMujica/releases/tag/v0.4.2).
+🔥[2026.4.7] Our paper was accepted by ACL 2026 Main Conference!
 
-🔥[2025.8.16] We have released the Chinese Psychological Reasoning LLM Psyche-R1! For model downloads, please click here: [MindIntLab/Psyche-R1](https://huggingface.co/MindIntLab/Psyche-R1)
+🔥[2025.10.17] We developed an APP for our model which is available for Windows, Linux, and Android users. Download it here: [Psyche-R1-APP](https://github.com/WangWindow/AvaMujica/releases/tag/v0.4.2).
+
+🔥[2025.8.16] We released the Chinese psychological reasoning LLM Psyche-R1! For model downloads, please click here: [MindIntLab/Psyche-R1](https://huggingface.co/MindIntLab/Psyche-R1)
 
 ## Introduction
 Psyche-R1 is a Chinese psychological reasoning LLM that unifies empathy, expertise, and reasoning capabilities.
