@@ -3,7 +3,7 @@
 
 Paper here -> [Psyche-R1: Towards Reliable Psychological LLMs through Unified Empathy, Expertise, and Reasoning](https://arxiv.org/pdf/2508.10848)
 
-\[ [English](README.md) | 简体中文 \]
+\[ [English](README.md) | 中文 \]
 
 ## 最近更新
 🔥[2026.4.7] 我们的文章被ACL2026主会接收！
