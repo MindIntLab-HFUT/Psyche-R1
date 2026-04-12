@@ -6,7 +6,7 @@ Paper here -> [Psyche-R1: Towards Reliable Psychological LLMs through Unified Em
 \[ [English](README.md) | 中文 \]
 
 ## 最近更新
-🔥[2026.4.7] 我们的文章被ACL2026主会接收！
+🔥[2026.4.7] 🎉我们的文章被**ACL2026主会**接收！🎉
 
 🔥[2025.10.17] 我们开发了一款 APP ，支持 Windows、Linux 和 Android 平台。请点击此处下载：[Psyche-R1-APP](https://github.com/WangWindow/AvaMujica/releases/tag/v0.4.2).
 
