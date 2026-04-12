@@ -6,7 +6,7 @@
 \[ English | [中文](README_zh.md) \]
 
 ## Latest News
-🔥[2026.4.7] Our paper was accepted by **ACL 2026 Main Conference**!
+🔥[2026.4.7] 🎉Our paper was accepted by **ACL 2026 Main Conference**!🎉
 
 🔥[2025.10.17] We developed an APP for our model which is available for Windows, Linux, and Android users. Download it here: [Psyche-R1-APP](https://github.com/WangWindow/AvaMujica/releases/tag/v0.4.2).
 
