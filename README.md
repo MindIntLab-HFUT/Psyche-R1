@@ -1,7 +1,7 @@
 # <img src="figure/logo.png" alt="Psyche-R1 logo" style="height: 1.2em; vertical-align: middle;"> Psyche-R1
 <a href='https://arxiv.org/pdf/2508.10848'><img src='https://img.shields.io/badge/ArXiv-2508.10848-red'></a><a href="./LICENSE"><img src="https://img.shields.io/badge/license-Apache%202-red.svg"></a><img src="https://img.shields.io/badge/python-3.8+-blue.svg" />
 
-[Psyche-R1: Towards Reliable Psychological LLMs through Unified Empathy, Expertise, and Reasoning](https://arxiv.org/pdf/2508.10848)
+[Psyche-R1: Towards Reliable Psychological LLMs through Unified Empathy, Expertise, and Reasoning](_ACL_2026_camera_ready__Psyche_R1__Towards_Reliable_Psychological_LLMs_through_Unified_Empathy__Expertise__and_Reasoning.pdf)
 
 \[ English | [中文](README_zh.md) \]
 
